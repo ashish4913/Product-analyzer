@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block title %}
+Product Analyzer
+{% endblock %}
+
+{% block body %}
+
+  
+<section class="text-gray-700 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-wrap -mx-4 -mb-10 text-center">
+      <div class="sm:w-1/2 mb-10 px-4">
+        <div class="rounded-lg h-64 overflow-hidden">
+            <a href=""><img   alt="amazon" width="600" height="600"  src="{% static '/images/amazon.png' %}"></a>
+        </div>
+        <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Get Insights of product from amazon</h2>
+        <p class="leading-relaxed text-base">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p>
+        <br>
+       
+        <form action="{%url 'flipkart'  %}" method="POST" enctype="multipart/form-data">
+          {% csrf_token %} 
+        <input type="text" placeholder="https://www.amazon.com/realme-narzo-20a-glory-silver-32-gb/p/itmca0d14f41a891?pid=MOBFVEATZJB7BYFS&lid=LSTMOBFVEATZJB7BYFSN4HYMB&marketplace=FLIPKART&srno=b_1_1&otracker=clp_banner_1_7.bannerX3.BANNER_mobile-phones-big-diwali-sale-pl99i8k1-store_F8WVUJPE5HIX&fm=neo%2Fmerchandising&iid=1d713ab1-33d3-4aea-86b5-1aa7abd671f8.MOBFVEATZJB7BYFS.SEARCH&ppt=browse&ppn=browse&ssid=sw1p6qh00g0000001604901653368"  class="bg-gray-100 rounded mr-4 border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 lg:w-full xl:w-1/2 w-2/4" id='url_amazon' name='url_amazon'> 
+      </div>
+      <div class="sm:w-1/2 mb-10 px-4">
+        <div class="rounded-lg h-64 overflow-hidden">
+            
+            <img alt="flipkart"  width="600" height="600"  src="{% static '/images/flipkart.jpg' %}">
+        </div>
+        <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Get Insights of product from flipkart</h2>
+        <p class="leading-relaxed text-base">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p>
+        <br>
+        <input type="text" placeholder="https://www.flipkart.com/realme-narzo-20a-glory-silver-32-gb/p/itmca0d14f41a891?pid=MOBFVEATZJB7BYFS&lid=LSTMOBFVEATZJB7BYFSN4HYMB&marketplace=FLIPKART&srno=b_1_1&otracker=clp_banner_1_7.bannerX3.BANNER_mobile-phones-big-diwali-sale-pl99i8k1-store_F8WVUJPE5HIX&fm=neo%2Fmerchandising&iid=1d713ab1-33d3-4aea-86b5-1aa7abd671f8.MOBFVEATZJB7BYFS.SEARCH&ppt=browse&ppn=browse&ssid=sw1p6qh00g0000001604901653368"  class="bg-gray-100 rounded mr-4 border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 lg:w-full xl:w-1/2 w-2/4" id='url'name='url'>  
+      </div>
+    </div>
+    <br>
+    <br>
+    <div style="align-items: center; margin-left: 45%;">
+    <button type="submit" style="align-items: center;" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Analyze</button></a>
+  </div>
+  </div>
+</form>
+</section>
+
+
+  {% endblock %}
